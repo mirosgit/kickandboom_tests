@@ -6,6 +6,8 @@
   "scripts": {
     "test": "playwright test",
     "test:smoke": "playwright test --grep @smoke",
+    "test:ci": "playwright test --grep @smoke --project=chromium-desktop --project=webkit-desktop --project=mobile-chrome",
+    "test:firefox": "playwright test --grep @smoke --project=firefox-desktop",
     "test:debug": "playwright test --project=chromium-desktop --grep @smoke --debug",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",

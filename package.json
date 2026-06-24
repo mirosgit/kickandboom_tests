@@ -1,0 +1,21 @@
+{
+  "name": "kickandboom_tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright TypeScript automation for KickAndBoom landing and WebGL game flow.",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:debug": "playwright test --project=chromium-desktop --grep @smoke --debug",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.0",
+    "dotenv": "^16.4.7"
+  }
+}

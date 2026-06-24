@@ -58,6 +58,12 @@ Run CI smoke command:
 npm run test:ci
 ```
 
+Run Firefox smoke separately:
+
+```bash
+npm run test:firefox
+```
+
 Run in debug mode with Playwright Inspector:
 
 ```bash
@@ -140,6 +146,8 @@ Pipeline steps:
 3. Run TypeScript typecheck.
 4. Run smoke tests with `npm run test:ci`.
 5. Upload `playwright-report` and `test-results` as artifacts.
+
+CI release-gate smoke runs Chromium desktop, WebKit desktop, and mobile Chrome. Firefox is kept as a separate command because Unity/WebGL game launch is unstable on GitHub-hosted Firefox runners and should not block the main release gate unless the product officially requires that combination.
 
 To change the target environment in GitHub Actions, set repository variable:
 

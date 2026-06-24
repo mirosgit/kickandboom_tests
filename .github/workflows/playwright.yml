@@ -42,6 +42,9 @@ jobs:
       - name: Run Playwright smoke tests
         run: npm run test:ci
 
+      - name: Run BDD smoke scenario
+        run: npm run bdd:smoke
+
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v7

@@ -11,13 +11,21 @@
     "test:debug": "playwright test --project=chromium-desktop --grep @smoke --debug",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
+    "prebdd": "node scripts/ensure-test-results.mjs",
+    "bdd": "cucumber-js",
+    "prebdd:smoke": "node scripts/ensure-test-results.mjs",
+    "bdd:smoke": "cucumber-js --tags @smoke",
+    "prebdd:debug": "node scripts/ensure-test-results.mjs",
+    "bdd:debug": "HEADED=true PWDEBUG=1 cucumber-js --tags @smoke --parallel 1",
     "report": "playwright show-report",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^13.0.0",
     "@playwright/test": "^1.49.0",
     "@types/node": "^22.10.0",
-    "typescript": "^5.6.0",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.0"
   }
 }
